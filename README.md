@@ -19,7 +19,7 @@
 Vision-OPD is a regional-to-global on-policy self-distillation framework that transfers a model's own privileged regional perception to its full-image policy, enabling fine-grained visual understanding in a single forward pass — without external teachers, ground-truth labels, reward verifiers, or inference-time tool use.
 
 <p align="center">
-  <img src="figures/average_bar_chart.png" alt="Vision-OPD Average Scores" width="90%"/>
+  <img src="figures/average_bar_chart.png" alt="Vision-OPD Average Scores" width="60%"/>
 </p>
 
 <p align="center"><i>Average scores across fine-grained visual understanding benchmarks, including V* Bench, ZoomBench,  HR-Bench 4K, HR-Bench 8K, MME-RealWorld-EN and MME-RealWorld-CN.</i></p>
@@ -31,13 +31,11 @@ Vision-OPD is a regional-to-global on-policy self-distillation framework that tr
 ```bash
 conda create -n vision-opd python=3.12
 conda activate vision-opd
-pip install -e .
+pip install --upgrade pip
+pip install --no-deps -r requirements.txt
+pip install -e . --no-deps
 pip install flash-attn --no-build-isolation
-pip install flash-linear-attention==0.4.2
-pip install flashinfer-python==0.6.6
-pip install causal-conv1d==1.6.1
-pip install xformers==0.0.32.post1 --no-deps
-pip install transformers==5.5.0
+pip install causal-conv1d==1.6.1 --no-build-isolation
 ```
 
 ### 2. Prepare Training Data
